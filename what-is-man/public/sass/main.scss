@@ -1,0 +1,622 @@
+$color-primary: white;
+$color-secondary: #3f0d01;
+$color-tertiary: #fd3a20;
+$color-text-dark: rgb(0, 0, 0);
+$color-text-light: rgb(255, 255, 255); //light gray color
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    }
+    
+    body {
+    min-width: 350px;
+    font-weight: 400;
+    font-size:1rem;
+    line-height:1.7;
+    color: $color-text-dark;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+    .background {
+        height: 100vh;
+        width: 100%;
+        position: fixed;
+        z-index: -5;
+        background-image: url('../images/bg_stars2.jpg');/*We can specify 2 background images, the first one being the top one - the linear gradient will be on top of the linear gradient - then we can ujst pull the opacity value down with the color picker or specify the opacity*/
+        background-size: cover; /*will fit the image across the entire width of the view port*/
+        background-position: top; /*ensure the image stays at the top of the container while bottom would do the opposite and center will always stay at the center*/
+    }
+
+    .nav-bar-header {
+        background: $color-primary;
+        width: 100%;
+        font-size: 2.2rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        font-weight: 900;
+        padding-top: 2rem;
+    }
+
+    .nav-bar-top {
+        background: $color-primary;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+
+        .nav-route {
+            padding: 1rem;
+            text-decoration: none;
+            transition: all .5s ease-in-out;
+            font-size: .8rem;
+            font-weight: bold;
+
+            &:link,
+            &:visited {
+                color: $color-text-dark;
+            }
+
+            &:hover,
+            &:active {
+                color: #881b00;
+            }
+        }
+
+        .nav-route a:after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            top: 1rem;
+            left: 0;
+            background-color: white;
+            visibility: hidden;
+            -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+            -webkit-transition: all 0.3s ease-in-out 0s;
+            transition: all 0.3s ease-in-out 0s;
+          }
+        
+        .nav-route a:hover:after,
+        .nav-route a:focus:after,
+        .nav-route a:active:after {
+            visibility: visible;
+            -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+          }
+
+    }
+
+
+    // INDEX - HOME
+    .header {
+        margin: 4rem 0 1rem 0;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        .book-container {
+            width: 350px;
+            max-height: 500px;
+
+            img {
+                max-height: 100%;
+            }
+        }
+
+        .book-summary {
+            position: relative;
+            width: 350px;
+            height: 100%;
+            padding: 2rem;
+            padding-bottom: 5rem;
+            margin-left: 100px;
+            background: rgba(#3b4f69, 0.521);
+            color: white;
+
+            .book-summary-title {
+                text-align: center;
+            }
+
+            .book-summary-title {
+                font-weight: bold;
+            }
+
+            .book-summary-contents {
+                font-size: .9rem;
+                margin: .5rem 0;
+            }
+
+            .book-summary-chapers {
+                padding-left: 2rem;
+            }
+
+            li {
+                font-size: .85rem;
+                font-style: italic;
+                color: rgb(221, 221, 221);
+            }
+
+            .buy {
+                position: absolute;
+                bottom: 2rem;
+                left: 2rem;
+                background: $color-secondary;
+                color: white;
+                padding: .5rem 1.3rem;
+                font-size: .8rem;
+                border: none;
+                border-radius: 5px;
+                text-transform: uppercase;
+                transition: 500ms ease-in-out;
+
+                &:hover {
+                    background: lighten($color-secondary, 15%);
+                    cursor: pointer;
+                }
+            }
+
+        }
+
+    }
+
+    .info {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        background: white;
+        width: 70%;
+        padding: 3rem;
+
+        .info-title {
+            text-transform: uppercase;
+            font-size: .9rem;
+            letter-spacing: 2px;
+            padding-bottom: .5rem;
+        }
+
+        hr {
+            margin-bottom: 1rem;
+        }
+
+        .youtube {
+            padding-top: 2rem;
+            width: 50%;
+
+            iframe {
+                width: 100%;
+                height: 250px;
+            }
+        }
+
+        .about {
+            position: relative;
+            width: 30%;
+            padding-top: 2rem;
+
+            .portrait1 {
+                position: relative;
+                height: 300px;
+                width: 80%;
+                left: 50%;
+                transform: translatex(-50%);
+                margin-bottom: 1rem;
+                background-image: url('../images/portraitbluegaze.jpg');/*We can specify 2 background images, the first one being the top one - the linear gradient will be on top of the linear gradient - then we can ujst pull the opacity value down with the color picker or specify the opacity*/
+                background-size: cover; /*will fit the image across the entire width of the view port*/
+                background-position: top; /*ensure the image stays at the top of the container while bottom would do the opposite and center will always stay at the center*/
+            }
+
+            .title {
+                font-weight: 900;
+            }
+
+            p {
+                font-size: .9rem;
+            }
+        }
+
+    }
+
+// ABOUT
+.about-container {
+    background: white;
+    margin: 4rem;
+    width: 70%;
+    padding: 4rem;
+    padding-bottom: 6rem;
+
+    img {
+        max-height: 350px;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+
+    h2, h4 {
+        margin-left: 50%;
+        transform: translateX(-50%);
+        text-align: center; 
+    }
+
+    h4 {
+        margin-bottom: 1rem;
+        width: 60%;
+    }
+
+    p {
+        margin: .8rem 0;
+        font-size: .9rem;
+        width: 80%;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+
+// CONTACT
+form {
+    width: 50%;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding-bottom: 6rem;
+
+    .contact-container {
+        width: 90%;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-content: center;
+
+        h1 {
+            text-align: center;
+        }
+    
+        .contact-form-group {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-content: center;
+
+            input, textarea {
+                margin: .3rem 0;
+                background: whitesmoke;
+                font-size: 1.2rem;
+                padding: .75rem;
+            }
+        }
+
+        button {
+            background: $color-secondary;
+            color: white;
+            padding: .5rem 1.3rem;
+            font-size: .8rem;
+            border: none;
+            border-radius: 5px;
+            text-transform: uppercase;
+            transition: 500ms ease-in-out;
+
+            &:hover {
+                background: lighten($color-secondary, 15%);
+                cursor: pointer;
+            }
+        }
+    
+    }
+
+
+}
+
+// CHECKOUT SCREEN
+.checkout-screen {
+    width: 100vw;
+    min-height: 100vh;
+    min-width: 100%;
+    height: 100%;
+    position: fixed;
+    overflow: scroll;
+    top: 0;
+    left: 0;
+    background: white;
+    padding: 4rem 0 8rem 0;
+    transform: translateX(100%);
+    transition: transform 1000ms ease-in-out, opacity 400ms ease-in;
+    opacity: 0;
+
+    .payment-container {
+        border: 2px solid black;
+        border-radius: 10px;
+        padding: 2rem;
+        width: 350px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        .remove-checkout-screen {
+            width: 90%;
+            background: red;
+            color: white;
+            padding: .7rem 1.3rem;
+            font-size: .8rem;
+            border: none;
+            border-radius: 5px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            transition: 500ms ease-in-out;
+
+            &:hover {
+                background: rgb(255, 126, 126);
+                cursor: pointer;
+            }
+        }
+
+        .checkout-description {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .checkout-author-subtitle {
+                font-size: .8rem;
+            }
+
+                display: flex;
+                text-align: center;
+                flex-direction: column;
+                align-items: center;
+
+                .checkout-description__book-container {
+                    img {
+                        max-height: 300px;
+                    }
+                }
+    
+                .checkout-formats {
+                    margin-top: 1rem;
+                    margin-bottom: .5rem;
+                }
+    
+                .purchase-button {
+                    color: black;
+                    text-decoration: none;
+                    background: whitesmoke;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                    width: 90%;
+                    border: 1px solid black;
+                    padding: .7rem 0rem;
+                    border-radius: 5px;
+                    margin-bottom: .5rem;
+                    transition: all 300ms;
+                    line-height: 1.2rem;
+
+                    .purchase-button__title {
+                        font-size: .9rem;
+                    }
+
+                    .purchase-button__price {
+                        font-size: .8rem;
+                        font-weight: bold;
+                    }
+                }
+    
+                .purchase-button:hover {
+                    cursor: pointer;
+                    background: white;
+                    color: #1e5085;
+                }
+
+
+            .checkout-container-two {
+                transform: translateX(100%);
+                transition: transform 1000ms ease-in-out, opacity 400ms ease-in;
+                opacity: 0;
+            }
+
+        }
+
+        hr {
+            width: 100%;
+            margin: 2rem 0;
+        }
+
+        .cash-app-title {
+            text-align: center;
+        }
+    
+        .cash-app-logo {
+            position: relative;
+            height: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-image: url('../images/cashapp-2.png');/*We can specify 2 background images, the first one being the top one - the linear gradient will be on top of the linear gradient - then we can ujst pull the opacity value down with the color picker or specify the opacity*/
+            background-size: contain; /*will fit the image across the entire width of the view port*/
+            background-position: top; /*ensure the image stays at the top of the container while bottom would do the opposite and center will always stay at the center*/
+            background-repeat: no-repeat;
+        }
+
+        .userName {
+            font-weight: 1200;
+            font-size: 1.1rem;
+        }
+
+        .checkout-paragraph {
+            margin-bottom: .5rem;
+        }
+    
+    }
+
+}
+
+.display-checkout-screen {
+    transform: translateX(0%);
+    opacity: 1;
+}
+
+@media (max-width: 900px) {
+
+    .background {
+        height: 100vh;
+        width: 100%;
+        position: fixed;
+        z-index: -5;
+        background-image: url('../images/bg_stars2.jpg');/*We can specify 2 background images, the first one being the top one - the linear gradient will be on top of the linear gradient - then we can ujst pull the opacity value down with the color picker or specify the opacity*/
+        background-size: cover; /*will fit the image across the entire width of the view port*/
+        background-position: top; /*ensure the image stays at the top of the container while bottom would do the opposite and center will always stay at the center*/
+    }
+
+    .header {
+        position: relative;
+        margin: 4rem 0 1rem 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        .book-container {
+
+            img {
+                max-width: 100%;
+            }
+        }
+
+        .checkout-description__book-container {
+            img {
+                max-width: 80%;
+            }
+        }
+
+        .book-summary {
+            position: relative;
+            max-width: 100%;
+            min-height: 425px;
+            height: 100%;
+            margin: 4rem 0;
+        }
+
+    }
+
+    .info {
+        width: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 1rem;
+        padding-bottom: 6rem;
+
+        .youtube {
+            width: 100%;
+
+            iframe {
+                width: 100%;
+                height: 250px;
+            }
+        }
+
+
+    .about {
+        width: 100%;
+
+        .portrait1 {
+            position: relative;
+            height: 400px;
+            width: 80%;
+            left: 50%;
+            transform: translatex(-50%);
+            margin-bottom: 1rem;
+            background-image: url('../images/portraitbluegaze.jpg');/*We can specify 2 background images, the first one being the top one - the linear gradient will be on top of the linear gradient - then we can ujst pull the opacity value down with the color picker or specify the opacity*/
+            background-size: cover; /*will fit the image across the entire width of the view port*/
+            background-position: top; /*ensure the image stays at the top of the container while bottom would do the opposite and center will always stay at the center*/
+        }
+
+        .title {
+            font-weight: 900;
+        }
+
+        p {
+            font-size: .9rem;
+            }   
+        }
+
+    }
+
+    // ABOUT
+    .about-container {
+        background: white;
+        margin:0;
+        width: 100%;
+        padding: .2rem;
+        padding-bottom: 6rem;
+        overflow: hidden;
+
+        img {
+            max-height: 350px;
+            margin-left: 50%;
+            transform: translateX(-50%);
+        }
+
+        h2, h4 {
+            margin-left: 50%;
+            transform: translateX(-50%);
+            text-align: center; 
+        }
+
+        h4 {
+            margin-bottom: 1rem;
+            width: 60%;
+        }
+
+        p {
+            margin: .8rem 0;
+            font-size: .9rem;
+            width: 80%;
+            margin-left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+
+    // CONTACT
+    form {
+        width: 100%;
+        margin: 0 0;
+        transform: translateX(0);
+        background: white;
+        padding-bottom: 6rem;
+
+        .contact-container {
+            width: 100%;
+            padding: 1rem;
+        }
+
+    }
+
+  }

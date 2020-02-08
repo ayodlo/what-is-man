@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>What Is Man? | Home</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+
+<body>
+    <div class="background"></div>
+    <div class="nav-bar-header">Dray Scott</div>
+    <nav class="nav-bar-top">
+        <a href="../../index.html" class="nav-route">Home</a>
+        <a href="about.html" class="nav-route">About</a>
+        <a href="contact.html" class="nav-route">Contact</a>
+    </nav>
+
+    <form class="contact-form gform pure-form pure-form-stacked" method="POST" data-email="example@email.net" action="https://script.google.com/macros/s/AKfycbyMez5WadgYxvbDbH_Lr3_r4Uuu-OjjAXne5dJ_ax08vkj9Tp11/exec">
+        <div class="contact-container">
+            <h1>Send us a message</h1>
+            <div class="contact-form-group">
+                <input type="text" placeholder="Name" id="name" name="name" required>
+                <input type="text" placeholder="Email Address" id="email" name="email" type="email" required>
+                <textarea type="text" placeholder="Message" id="message" name="message" rows="10" required></textarea>
+            </div>
+            <button class="submit" type="submit">
+                Send Email
+            </button>
+        </div>
+        <script data-cfasync="false" type="text/javascript"
+		src="https://cdn.rawgit.com/dwyl/learn-to-send-email-via-google-script-html-no-server/master/form-submission-handler.js"></script>
+</body>
+
+</html>
