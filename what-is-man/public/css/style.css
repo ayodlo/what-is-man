@@ -296,7 +296,8 @@ form {
         text-decoration: none;
         background: whitesmoke;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: flex-start;
         align-items: center;
         text-align: center;
         width: 90%;
@@ -306,6 +307,25 @@ form {
         margin-bottom: .5rem;
         transition: all 300ms;
         line-height: 1.2rem; }
+        .checkout-screen .payment-container .checkout-description .purchase-button .purchase-button_brand {
+          margin: 0 2rem;
+          position: relative;
+          height: 24px;
+          width: 24px;
+          background-size: contain;
+          /*will fit the image across the entire width of the view port*/
+          background-position: top;
+          /*ensure the image stays at the top of the container while bottom would do the opposite and center will always stay at the center*/
+          background-repeat: no-repeat; }
+        .checkout-screen .payment-container .checkout-description .purchase-button .paypal {
+          background-image: url("../images/paypal-symbol.jpg");
+          /*We can specify 2 background images, the first one being the top one - the linear gradient will be on top of the linear gradient - then we can ujst pull the opacity value down with the color picker or specify the opacity*/ }
+        .checkout-screen .payment-container .checkout-description .purchase-button .amazon {
+          background-image: url("../images/amazon-symbol.png");
+          /*We can specify 2 background images, the first one being the top one - the linear gradient will be on top of the linear gradient - then we can ujst pull the opacity value down with the color picker or specify the opacity*/ }
+        .checkout-screen .payment-container .checkout-description .purchase-button .kp {
+          background-image: url("../images/kp-symbol.png");
+          /*We can specify 2 background images, the first one being the top one - the linear gradient will be on top of the linear gradient - then we can ujst pull the opacity value down with the color picker or specify the opacity*/ }
         .checkout-screen .payment-container .checkout-description .purchase-button .purchase-button__title {
           font-size: .9rem; }
         .checkout-screen .payment-container .checkout-description .purchase-button .purchase-button__price {
@@ -330,6 +350,18 @@ form {
       left: 50%;
       transform: translateX(-50%);
       background-image: url("../images/cashapp-2.png");
+      /*We can specify 2 background images, the first one being the top one - the linear gradient will be on top of the linear gradient - then we can ujst pull the opacity value down with the color picker or specify the opacity*/
+      background-size: contain;
+      /*will fit the image across the entire width of the view port*/
+      background-position: top;
+      /*ensure the image stays at the top of the container while bottom would do the opposite and center will always stay at the center*/
+      background-repeat: no-repeat; }
+    .checkout-screen .payment-container .zelle-app-logo {
+      position: relative;
+      height: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-image: url("../images/zelleapp-1.png");
       /*We can specify 2 background images, the first one being the top one - the linear gradient will be on top of the linear gradient - then we can ujst pull the opacity value down with the color picker or specify the opacity*/
       background-size: contain;
       /*will fit the image across the entire width of the view port*/
