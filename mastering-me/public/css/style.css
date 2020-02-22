@@ -10,8 +10,12 @@ body {
   font-size: 1rem;
   line-height: 1.7;
   color: black;
+  display: -webkit-box;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
   flex-direction: column;
+  -webkit-box-align: center;
   align-items: center; }
 
 .background {
@@ -30,9 +34,14 @@ body {
   background: white;
   width: 100%;
   font-size: 2.2rem;
+  display: -webkit-box;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
   flex-direction: row;
+  -webkit-box-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
   align-items: center;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -42,15 +51,21 @@ body {
 .nav-bar-top {
   background: white;
   width: 100%;
+  display: -webkit-box;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
   flex-direction: row;
+  -webkit-box-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
   align-items: center;
   letter-spacing: 3px;
   text-transform: uppercase; }
   .nav-bar-top .nav-route {
     padding: 1rem;
     text-decoration: none;
+    -webkit-transition: all .5s ease-in-out;
     transition: all .5s ease-in-out;
     font-size: .8rem;
     font-weight: bold; }
@@ -81,8 +96,12 @@ body {
 .header {
   margin: 4rem 0 1rem 0;
   width: 100%;
+  display: -webkit-box;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
   flex-direction: row;
+  -webkit-box-pack: center;
   justify-content: center; }
   .header .book-container {
     max-width: 350px; }
@@ -122,13 +141,17 @@ body {
       border: none;
       border-radius: 5px;
       text-transform: uppercase;
+      -webkit-transition: 500ms ease-in-out;
       transition: 500ms ease-in-out; }
       .header .book-summary .buy:hover {
         background: #8a1d02;
         cursor: pointer; }
 
 .info {
+  display: -webkit-box;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
   flex-direction: row;
   justify-content: space-around;
   background: white;
@@ -156,6 +179,7 @@ body {
       height: 300px;
       width: 80%;
       left: 50%;
+      -webkit-transform: translatex(-50%);
       transform: translatex(-50%);
       margin-bottom: 1rem;
       background-image: url("../images/1.JPG");
@@ -178,9 +202,11 @@ body {
   .about-container img {
     max-height: 350px;
     margin-left: 50%;
+    -webkit-transform: translateX(-50%);
     transform: translateX(-50%); }
   .about-container h2, .about-container h4 {
     margin-left: 50%;
+    -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     text-align: center; }
   .about-container h4 {
@@ -191,6 +217,7 @@ body {
     font-size: .9rem;
     width: 80%;
     margin-left: 50%;
+    -webkit-transform: translateX(-50%);
     transform: translateX(-50%); }
 
 form {
@@ -198,16 +225,22 @@ form {
   margin-top: 4rem;
   margin-bottom: 4rem;
   margin-left: 50%;
+  -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   background: white;
   padding-bottom: 6rem; }
   form .contact-container {
     width: 90%;
     margin-left: 50%;
+    -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     padding: 3rem;
+    display: -webkit-box;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
     flex-direction: column;
+    -webkit-box-pack: start;
     justify-content: flex-start;
     align-content: center; }
     form .contact-container h1 {
@@ -218,8 +251,12 @@ form {
       padding: .5rem 0 1.5rem;
       width: 90%; }
     form .contact-container .contact-form-group {
+      display: -webkit-box;
       display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
       flex-direction: column;
+      -webkit-box-pack: start;
       justify-content: flex-start;
       align-content: center; }
       form .contact-container .contact-form-group input, form .contact-container .contact-form-group textarea {
@@ -235,6 +272,7 @@ form {
       border: none;
       border-radius: 5px;
       text-transform: uppercase;
+      -webkit-transition: 500ms ease-in-out;
       transition: 500ms ease-in-out; }
       form .contact-container button:hover {
         background: #8a1d02;
@@ -243,15 +281,29 @@ form {
 .checkout-screen {
   width: 100vw;
   min-height: 100vh;
+  min-width: 100%;
   height: 100%;
   position: fixed;
   overflow: scroll;
   top: 0;
   left: 0;
-  background: white;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 5;
+  background-image: url("../images/bg_stars2.jpg");
+  /*We can specify 2 background images, the first one being the top one - the linear gradient will be on top of the linear gradient - then we can ujst pull the opacity value down with the color picker or specify the opacity*/
+  background-size: cover;
+  /*will fit the image across the entire width of the view port*/
+  background-position: top;
+  /*ensure the image stays at the top of the container while bottom would do the opposite and center will always stay at the center*/
   padding: 4rem 0 8rem 0;
+  -webkit-transform: translateX(100%);
   transform: translateX(100%);
+  -webkit-transition: opacity 400ms ease-in, -webkit-transform 1000ms ease-in-out;
+  transition: opacity 400ms ease-in, -webkit-transform 1000ms ease-in-out;
   transition: transform 1000ms ease-in-out, opacity 400ms ease-in;
+  transition: transform 1000ms ease-in-out, opacity 400ms ease-in, -webkit-transform 1000ms ease-in-out;
   opacity: 0; }
   .checkout-screen .payment-container {
     border: 2px solid black;
@@ -259,11 +311,18 @@ form {
     padding: 2rem;
     width: 350px;
     position: relative;
+    background-color: white;
     left: 50%;
+    -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
+    display: -webkit-box;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
     flex-direction: column;
+    -webkit-box-pack: start;
     justify-content: flex-start;
+    -webkit-box-align: center;
     align-items: center; }
     .checkout-screen .payment-container .remove-checkout-screen {
       width: 90%;
@@ -275,12 +334,89 @@ form {
       border-radius: 5px;
       text-transform: uppercase;
       margin-bottom: 2rem;
+      -webkit-transition: 500ms ease-in-out;
       transition: 500ms ease-in-out; }
       .checkout-screen .payment-container .remove-checkout-screen:hover {
         background: #ff7e7e;
         cursor: pointer; }
     .checkout-screen .payment-container .checkout-description {
-      text-align: center; }
+      text-align: center;
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      flex-direction: column;
+      -webkit-box-align: center;
+      align-items: center;
+      display: flex;
+      text-align: center;
+      flex-direction: column;
+      align-items: center; }
+      .checkout-screen .payment-container .checkout-description .checkout-author-subtitle {
+        font-size: .8rem; }
+      .checkout-screen .payment-container .checkout-description .checkout-description__book-container img {
+        max-height: 300px; }
+      .checkout-screen .payment-container .checkout-description .checkout-formats {
+        margin-top: 1rem;
+        margin-bottom: .5rem; }
+      .checkout-screen .payment-container .checkout-description .purchase-button {
+        color: black;
+        text-decoration: none;
+        background: whitesmoke;
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        flex-direction: row;
+        -webkit-box-pack: start;
+        justify-content: flex-start;
+        -webkit-box-align: center;
+        align-items: center;
+        text-align: center;
+        width: 90%;
+        border: 1px solid black;
+        padding: .7rem 0rem;
+        border-radius: 5px;
+        margin-bottom: .5rem;
+        -webkit-transition: all 300ms;
+        transition: all 300ms;
+        line-height: 1.2rem; }
+        .checkout-screen .payment-container .checkout-description .purchase-button .purchase-button_brand {
+          margin: 0 2rem;
+          position: relative;
+          height: 24px;
+          width: 24px;
+          background-size: contain;
+          /*will fit the image across the entire width of the view port*/
+          background-position: top;
+          /*ensure the image stays at the top of the container while bottom would do the opposite and center will always stay at the center*/
+          background-repeat: no-repeat; }
+        .checkout-screen .payment-container .checkout-description .purchase-button .paypal {
+          background-image: url("../images/paypal-symbol.jpg");
+          /*We can specify 2 background images, the first one being the top one - the linear gradient will be on top of the linear gradient - then we can ujst pull the opacity value down with the color picker or specify the opacity*/ }
+        .checkout-screen .payment-container .checkout-description .purchase-button .amazon {
+          background-image: url("../images/amazon-symbol.png");
+          /*We can specify 2 background images, the first one being the top one - the linear gradient will be on top of the linear gradient - then we can ujst pull the opacity value down with the color picker or specify the opacity*/ }
+        .checkout-screen .payment-container .checkout-description .purchase-button .kp {
+          background-image: url("../images/kp-symbol.png");
+          /*We can specify 2 background images, the first one being the top one - the linear gradient will be on top of the linear gradient - then we can ujst pull the opacity value down with the color picker or specify the opacity*/ }
+        .checkout-screen .payment-container .checkout-description .purchase-button .purchase-button__title {
+          font-size: .9rem; }
+        .checkout-screen .payment-container .checkout-description .purchase-button .purchase-button__price {
+          font-size: .8rem;
+          font-weight: bold; }
+      .checkout-screen .payment-container .checkout-description .purchase-button:hover {
+        cursor: pointer;
+        background: white;
+        color: #1e5085; }
+      .checkout-screen .payment-container .checkout-description .checkout-container-two {
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+        -webkit-transition: opacity 400ms ease-in, -webkit-transform 1000ms ease-in-out;
+        transition: opacity 400ms ease-in, -webkit-transform 1000ms ease-in-out;
+        transition: transform 1000ms ease-in-out, opacity 400ms ease-in;
+        transition: transform 1000ms ease-in-out, opacity 400ms ease-in, -webkit-transform 1000ms ease-in-out;
+        opacity: 0; }
     .checkout-screen .payment-container hr {
       width: 100%;
       margin: 2rem 0; }
@@ -290,8 +426,22 @@ form {
       position: relative;
       height: 80px;
       left: 50%;
+      -webkit-transform: translateX(-50%);
       transform: translateX(-50%);
       background-image: url("../images/cashapp-2.png");
+      /*We can specify 2 background images, the first one being the top one - the linear gradient will be on top of the linear gradient - then we can ujst pull the opacity value down with the color picker or specify the opacity*/
+      background-size: contain;
+      /*will fit the image across the entire width of the view port*/
+      background-position: top;
+      /*ensure the image stays at the top of the container while bottom would do the opposite and center will always stay at the center*/
+      background-repeat: no-repeat; }
+    .checkout-screen .payment-container .zelle-app-logo {
+      position: relative;
+      height: 80px;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+      background-image: url("../images/zelleapp-1.png");
       /*We can specify 2 background images, the first one being the top one - the linear gradient will be on top of the linear gradient - then we can ujst pull the opacity value down with the color picker or specify the opacity*/
       background-size: contain;
       /*will fit the image across the entire width of the view port*/
@@ -305,6 +455,7 @@ form {
       margin-bottom: .5rem; }
 
 .display-checkout-screen {
+  -webkit-transform: translateX(0%);
   transform: translateX(0%);
   opacity: 1; }
 
@@ -323,9 +474,14 @@ form {
     margin: 4rem 0 1rem 0;
     width: 100%;
     height: 100%;
+    display: -webkit-box;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
     flex-direction: column;
+    -webkit-box-pack: start;
     justify-content: flex-start;
+    -webkit-box-align: center;
     align-items: center; }
     .header .book-container img {
       max-width: 100%; }
@@ -338,9 +494,14 @@ form {
   .info {
     width: 100%;
     position: relative;
+    display: -webkit-box;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
     flex-direction: column;
+    -webkit-box-pack: start;
     justify-content: flex-start;
+    -webkit-box-align: center;
     align-items: center;
     padding: 1rem;
     padding-bottom: 6rem; }
@@ -356,6 +517,7 @@ form {
         height: 400px;
         width: 80%;
         left: 50%;
+        -webkit-transform: translatex(-50%);
         transform: translatex(-50%);
         margin-bottom: 1rem;
         background-size: cover;
@@ -376,9 +538,11 @@ form {
     .about-container img {
       max-height: 350px;
       margin-left: 50%;
+      -webkit-transform: translateX(-50%);
       transform: translateX(-50%); }
     .about-container h2, .about-container h4 {
       margin-left: 50%;
+      -webkit-transform: translateX(-50%);
       transform: translateX(-50%);
       text-align: center; }
     .about-container h4 {
@@ -389,10 +553,12 @@ form {
       font-size: .9rem;
       width: 80%;
       margin-left: 50%;
+      -webkit-transform: translateX(-50%);
       transform: translateX(-50%); }
   form {
     width: 100%;
     margin: 0 0;
+    -webkit-transform: translateX(0);
     transform: translateX(0);
     background: white;
     padding-bottom: 6rem; }
