@@ -384,7 +384,7 @@ form {
     width: 100%;
     position: fixed;
     z-index: 5;
-    background-image: url('../images/bg_stars2.jpg');/*We can specify 2 background images, the first one being the top one - the linear gradient will be on top of the linear gradient - then we can ujst pull the opacity value down with the color picker or specify the opacity*/
+    background-image: url('../images/bg4.jpg');/*We can specify 2 background images, the first one being the top one - the linear gradient will be on top of the linear gradient - then we can ujst pull the opacity value down with the color picker or specify the opacity*/
     background-size: cover; /*will fit the image across the entire width of the view port*/
     background-position: top; /*ensure the image stays at the top of the container while bottom would do the opposite and center will always stay at the center*/
     padding: 4rem 0 8rem 0;
